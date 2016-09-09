@@ -8,5 +8,11 @@ ln -s ~/.vim/git-completion.bash ~/git-completion.bash
 ln -s ~/.vim/git-prompt.sh ~/git-prompt.sh
 ```
 Also add:
-> . .env or . ~/.env
+```
+. .env
+```
+or
+```
+. ~/.env
+```
 to your .bash_profile or .bashrc
