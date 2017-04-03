@@ -1,0 +1,37 @@
+#Git Training Stuff
+# Enable tab completion
+source ~/.vim/.git-completion.bash
+
+# colors!
+green="\[\033[0;32m\]"
+yell="\[\033[0;33m\]"
+teal="\[\033[0;36m\]"
+blue="\[\033[1;34m\]"
+reset="\[\033[0m\]"
+
+# Change command prompt
+source ~/.vim/.git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=1
+# '\u' adds the name of the current user to the prompt
+# '\$(__git_ps1)' adds git-related stuff
+# '\W' adds the name of the current directory
+export PS1="$yell\u@\h$green\$(__git_ps1)$blue \w $yell\n\t $ $reset"
+
+# Additional Settings:
+## Make VI the default editor
+set -o vi
+
+## Various Aliases
+# Aliases
+alias ~="cd ~"                              # ~:            Go Home
+alias c='clear'                             # c:            Clear terminal display
+alias which='type -all'                     # which:        Find executables
+alias path='echo -e ${PATH//:/\\n}'         # path:         Echo all executable Paths
+alias show_options='shopt'                  # Show_options: display bash options settings
+alias fix_stty='stty sane'                  # fix_stty:     Restore terminal settings when screwed up
+alias openPorts='sudo lsof -i | grep LISTEN'        # openPorts:    All listening connections
+alias netCons='lsof -i'                             # netCons:      Show all open TCP/IP sockets
+alias flushDNS='dscacheutil -flushcache'            # flushDNS:     Flush out the DNS Cache
+alias lsock='lsof -i -P'             # lsock:        Display open sockets
+alias lsockU='lsof -nP | grep UDP'   # lsockU:       Display only open UDP sockets
+alias lsockT='lsof -nP | grep TCP'   # lsockT:       Display only open TCP sockets
